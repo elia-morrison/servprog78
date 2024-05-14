@@ -1,19 +1,11 @@
-from fastapi import FastAPI, HTTPException, Depends, Query
-from sqlalchemy.orm import Session
-from sqlalchemy.exc import IntegrityError
 from pydantic import BaseModel
-from typing import List, Optional
-from servprog78.dependencies.auth import User, check_user_role
-from servprog78.dependencies.database import (
-    get_db,
-)
 from servprog78.models import University
 from fastapi import APIRouter
 from servprog78.routers.shared.controller import CRUDController
 
 router = APIRouter()
 
-uni_controller = CRUDController(model=University, router=router)
+uni_controller = CRUDController(model=University, router=router, tags=['Unversities'])
 
 class UniversityCreate(BaseModel):
     country_id: int
