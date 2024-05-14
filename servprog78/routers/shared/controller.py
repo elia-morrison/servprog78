@@ -55,6 +55,8 @@ class CRUDController(Generic[T]):
 
             update_data = updates.dict(exclude_unset=True)
             for key, value in update_data.items():
+                if value is None:
+                    continue
                 setattr(existing_entity, key, value)
 
             try:

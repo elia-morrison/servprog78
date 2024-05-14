@@ -27,3 +27,5 @@ uni_controller.register_read_endpoint("/university_ranking_years/{entity_id}", r
 uni_controller.register_read_all_endpoint("/university_ranking_years/", response_model=UniversityRankingYearResponse)
 uni_controller.register_create_endpoint("/university_ranking_years/", response_model=UniversityRankingYearResponse,
                                         create_model=UniversityRankingYearCreate)
+uni_controller.register_patch_endpoint("/university_ranking_years/{entity_id}", response_model=UniversityRankingYearResponse,
+                                        patch_model=UniversityRankingYearCreate)

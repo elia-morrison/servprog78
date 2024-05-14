@@ -22,3 +22,5 @@ controller.register_read_endpoint("/ranking_systems/{entity_id}", response_model
 controller.register_read_all_endpoint("/ranking_systems/", response_model=RankingSystemResponse)
 controller.register_create_endpoint("/ranking_systems/", response_model=RankingSystemResponse,
                                         create_model=RankingSystemCreate)
+controller.register_patch_endpoint("/ranking_systems/{entity_id}", response_model=RankingSystemResponse,
+                                        patch_model=RankingSystemCreate)

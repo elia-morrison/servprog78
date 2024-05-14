@@ -24,3 +24,5 @@ uni_controller.register_read_endpoint("/universities/{entity_id}", response_mode
 uni_controller.register_read_all_endpoint("/universities/", response_model=UniversityResponse)
 uni_controller.register_create_endpoint("/universities/", response_model=UniversityResponse,
                                         create_model=UniversityCreate)
+uni_controller.register_patch_endpoint("/universities/{entity_id}", response_model=UniversityResponse,
+                                        patch_model=UniversityCreate)
