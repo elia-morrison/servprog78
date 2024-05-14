@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS university_year;
 
 CREATE TABLE university_year (
+  id INTEGER PRIMARY KEY,
   university_id INTEGER DEFAULT NULL,
   year INTEGER DEFAULT NULL,
   num_students INTEGER DEFAULT NULL,

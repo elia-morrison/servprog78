@@ -26,6 +26,7 @@ class Country(Base):
 
 class UniversityRankingYear(Base):
     __tablename__ = "university_ranking_year"
+    id = Column(Integer, primary_key=True)
     university_id = Column(Integer, ForeignKey('university.id'))
     ranking_criteria_id = Column(Integer, ForeignKey('ranking_criteria.id'))
     year = Column(Integer)
@@ -37,6 +38,7 @@ class UniversityRankingYear(Base):
 
 class UniversityYear(Base):
     __tablename__ = "university_year"
+    id = Column(Integer, primary_key=True)
     university_id = Column(Integer, ForeignKey('university.id'))
     year = Column(Integer)
     num_students = Column(Integer)

@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS university_ranking_year;
 
 CREATE TABLE university_ranking_year (
+  id INTEGER PRIMARY KEY,
   university_id INTEGER DEFAULT NULL,
   ranking_criteria_id INTEGER DEFAULT NULL,
   year INTEGER DEFAULT NULL,
