@@ -5,7 +5,8 @@ from sqlalchemy.orm import sessionmaker, relationship, Session
 from pydantic import BaseModel
 from servprog78.routers import (
     universities,
-    auth
+    auth,
+    countries,
 )
 from servprog78.models import (
     Base,
@@ -16,8 +17,9 @@ import uvicorn
 app = FastAPI(dependencies=[Depends(get_db)])
 app.include_router(universities.router)
 app.include_router(auth.router)
+app.include_router(countries.router)
 
 Base.metadata.create_all(bind=engine)
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
