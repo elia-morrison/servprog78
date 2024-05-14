@@ -27,15 +27,3 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
         data={"sub": user.username, "roles": user.roles}, expires_delta=access_token_expires
     )
     return {"access_token": access_token, "token_type": "bearer"}
-
-# @app.get("/users/me", response_model=User)
-# def read_users_me(current_user: User = Depends(get_current_user)):
-#     return current_user
-
-# @app.post("/items/", status_code=201)
-# def add_item(item: dict, current_user: User = Depends(check_user_role("writer"))):
-#     return {"item": item, "user": current_user.username}
-
-# @app.get("/items/")
-# def read_items(current_user: User = Depends(check_user_role("reader"))):
-#     return [{"item_id": "1", "owner": current_user.username}]
