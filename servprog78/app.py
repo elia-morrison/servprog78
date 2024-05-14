@@ -4,16 +4,18 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship, Session
 from pydantic import BaseModel
 from servprog78.routers import (
-    universities
+    universities,
+    auth
 )
 from servprog78.models import (
     Base,
 )
-from servprog78.dependencies import get_db, engine
+from servprog78.dependencies.database import get_db, engine
 import uvicorn
 
 app = FastAPI(dependencies=[Depends(get_db)])
 app.include_router(universities.router)
+app.include_router(auth.router)
 
 Base.metadata.create_all(bind=engine)
 

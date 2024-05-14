@@ -65,31 +65,3 @@ class RankingCriteria(Base):
 
     ranking_system = relationship("RankingSystem", back_populates="ranking_criteria")
     university_ranking_years = relationship("UniversityRankingYear", back_populates="ranking_criteria")
-
-class UniversityBase(BaseModel):
-    university_name: str
-
-class UniversityCreate(UniversityBase):
-    country_id: int
-
-class UniversityUpdate(UniversityBase):
-    country_id: int
-
-class UniversityOut(UniversityBase):
-    id: int
-    class Config:
-        orm_mode = True
-
-class CountryBase(BaseModel):
-    country_name: str
-
-class CountryCreate(CountryBase):
-    pass
-
-class CountryUpdate(CountryBase):
-    pass
-
-class CountryOut(CountryBase):
-    id: int
-    class Config:
-        orm_mode = True
